@@ -29,10 +29,15 @@ def translate_text(**kwargs):
     print(response['TranslatedText']) 
 
 # Add a Loop to iterate over the json file.
-def translate_loop():
+# Create a list of the input text
+def new_input_text_list():
     input_text = open_input()
-    for item in input_text: # Here we iterate over all dictionaries in the Input list
-        translate_text(**item)
+    new_list = []
+    for item in input_text:
+        text = item['Text']
+        new_list.append(text)
+    print(new_list)
+
 
 # Main Function - use to call other functions
 def main():
